@@ -1,0 +1,53 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+    
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+		android:background="@color/colorPrimary"
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/add_edittext_title_layout"
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:errorEnabled="true">
+    <EditText
+            android:id="@+id/add_edittext_title"
+            android:layout_width="match_parent" 
+            android:layout_height="match_parent"
+            android:hint="Titre du flux"
+            android:text=""/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/add_edittext_url_layout"
+            android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:errorEnabled="true">
+    <EditText
+            android:id="@+id/add_edittext_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Uri du flux"
+            android:inputType="textUri"
+            android:text=""/>    
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+            android:layout_weight="5"
+            android:id="@+id/add_button_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Valider"/>
+
+</LinearLayout>

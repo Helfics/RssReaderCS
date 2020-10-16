@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="213">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="475" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="70" width="374" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="476" customClass="SourceCell" reuseIdentifier="SourceCell">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="476" id="477">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="739" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="5" y="5" width="364" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGreenColor" colorSpace="custom" customColorSpace="sRGB" red="0.203921568627451" green="0.780392156862745" blue="0.349019607843137" alpha="1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint id="740" firstAttribute="trailing" secondItem="739" secondAttribute="trailing" constant="5"/>
+                                                <constraint id="741" firstItem="739" firstAttribute="leading" secondItem="477" secondAttribute="leading" constant="5"/>
+                                                <constraint id="742" firstItem="739" firstAttribute="top" secondItem="477" secondAttribute="top" constant="5"/>
+                                                <constraint id="743" firstAttribute="bottom" secondItem="739" secondAttribute="bottom" constant="5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="739" id="name-outlet-739"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="481" firstAttribute="trailingMargin" secondItem="475" secondAttribute="trailing"/>
+                            <constraint id="482" firstItem="475" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom"/>
+                            <constraint id="483" firstItem="475" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="484" firstItem="wfy-db-euE" firstAttribute="top" secondItem="475" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="RssReader" id="270" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="480" systemItem="add">
+                            <connections>
+                                <segue id="520" destination="488" kind="show"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sourceTableView" destination="475" id="name-outlet-475"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-128"/>
+        </scene>
+        <scene sceneID="212">
+            <objects>
+                <navigationController id="213" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="215">
+                        <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="271" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="216" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="-121"/>
+        </scene>
+        <scene sceneID="487">
+            <objects>
+                <viewController id="488" sceneMemberID="viewController" customClass="AddViewController" title="Ajouter un flux rss">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="485"/>
+                        <viewControllerLayoutGuide type="bottom" id="486"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="489">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="975" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="90" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="997" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Titre">
+                                <rect key="frame" x="30" y="115.5" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1275" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Url">
+                                <rect key="frame" x="30" y="195" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1276" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="169.5" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1386" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="686" width="354" height="30"/>
+                                <state key="normal" title="Ajouter"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="994" firstAttribute="trailingMargin" secondItem="975" secondAttribute="trailing" constant="10"/>
+                            <constraint id="995" firstItem="975" firstAttribute="leading" secondItem="489" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="996" firstItem="975" firstAttribute="top" secondItem="485" secondAttribute="bottom" constant="20"/>
+                            <constraint id="998" firstAttribute="trailingMargin" secondItem="997" secondAttribute="trailing" constant="10"/>
+                            <constraint id="999" firstItem="997" firstAttribute="leading" secondItem="489" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="1000" firstItem="997" firstAttribute="top" secondItem="975" secondAttribute="bottom" constant="5"/>
+                            <constraint id="1277" firstItem="1276" firstAttribute="top" secondItem="997" secondAttribute="bottom" constant="20"/>
+                            <constraint id="1278" firstAttribute="trailingMargin" secondItem="1276" secondAttribute="trailing" constant="10"/>
+                            <constraint id="1279" firstItem="1276" firstAttribute="leading" secondItem="489" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="1280" firstItem="1275" firstAttribute="top" secondItem="1276" secondAttribute="bottom" constant="5"/>
+                            <constraint id="1281" firstAttribute="trailingMargin" secondItem="1275" secondAttribute="trailing" constant="10"/>
+                            <constraint id="1282" firstItem="1275" firstAttribute="leading" secondItem="489" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="1387" firstAttribute="trailingMargin" secondItem="1386" secondAttribute="trailing" constant="10"/>
+                            <constraint id="1388" firstItem="1386" firstAttribute="leading" secondItem="489" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="1389" firstItem="486" firstAttribute="top" secondItem="1386" secondAttribute="bottom" constant="20"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleTextField" destination="997" id="name-outlet-997"/>
+                        <outlet property="urlTextField" destination="1275" id="name-outlet-1275"/>
+                        <outlet property="saveButton" destination="1386" id="name-outlet-1386"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="490" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781" y="-523"/>
+        </scene>
+        <scene sceneID="5764">
+            <objects>
+                <viewController id="5765" sceneMemberID="viewController" customClass="StreamViewController" title="Flux Rss" storyboardIdentifier="StreamViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5762"/>
+                        <viewControllerLayoutGuide type="bottom" id="5763"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5766">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5849" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="20" width="374" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="11216" customClass="RssItemCell" reuseIdentifier="RssItemCell" rowHeight="44" style="IBUITableViewCellStyleSubtitle" textLabel="12302" detailTextLabel="12303">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="11216" id="11223">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12302">
+                                                    <rect key="frame" x="15" y="5" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12303">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="5853" firstAttribute="trailingMargin" secondItem="5849" secondAttribute="trailing"/>
+                            <constraint id="5854" firstItem="5849" firstAttribute="leading" secondItem="5766" secondAttribute="leadingMargin"/>
+                            <constraint id="5855" firstItem="5763" firstAttribute="top" secondItem="5849" secondAttribute="bottom"/>
+                            <constraint id="8697" firstItem="5849" firstAttribute="top" secondItem="5762" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rssitemsTableView" destination="5849" id="name-outlet-5849"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5767" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781" y="293"/>
+        </scene>
+    </scenes>
+</document>
